@@ -24,10 +24,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-main {
-  margin: 2em;
-}
-
 ul {
   list-style: disc;
   border: 1px solid grey;
@@ -44,6 +40,21 @@ li {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+nav {
+  border: 1px solid blue;
+  padding: 1em;
+}
+
+main {
+  border: 1px solid yellow;
+  padding: 1em;
+}
+
+footer {
+  border: 1px solid green;
+  padding: 1em;
 }
 
 @media (prefers-color-scheme: dark) {

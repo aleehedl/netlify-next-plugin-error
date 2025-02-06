@@ -1,12 +1,13 @@
-import Navigation from "@/components/navigation";
 import Head from "next/head";
+import { getPageConfig } from "@/helpers/getPageConfig";
 
 const content = {
     en: "This is the second page",
     fi: "Tämä on toinen sivu",
 }
 
-export default function Home({ locale }) {
+export default function Home({ config, locale }) {
+  const { footer: {[locale]: footerData } } = config;
   return (
     <>
       <Head>
@@ -19,6 +20,7 @@ export default function Home({ locale }) {
         <main>
           {content[locale]}
         </main>
+        <footer>{footerData.text}</footer>
       </div>
     </>
   );
@@ -27,7 +29,8 @@ export default function Home({ locale }) {
 export async function getStaticProps({ locale }) {
     return {
         props: {
-           locale,
+          config: getPageConfig(),
+          locale,
         },
     };
 }
